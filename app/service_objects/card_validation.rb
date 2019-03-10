@@ -19,8 +19,7 @@ class CardValidation
         result +=item
       end
     end
-
-   return "valid" if (result % 10) == 0
-   return 'invalid'
+    return "valid" if (result % 10) == 0
+    return 'invalid'
   end
 end

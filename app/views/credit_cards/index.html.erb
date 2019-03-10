@@ -3,10 +3,10 @@
     <input type="submit" value="Validate this card number">
   </form>
 
-<% if @valid %>
+<% if @valid == "valid" %>
   <h2> Number: <%= "#{@number}" %> </h2>
-  <h3> VALID </h3>
+  <h3> VALID Card Number </h3>
   <h3> Type: <%= "#{@type}" %> </h3>
 <% else %>
-  <h3> Unknown Card </h3>
+  <h3> Invalid Card Number </h3>
 <% end %>
