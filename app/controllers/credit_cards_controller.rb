@@ -1,10 +1,9 @@
 
 class CreditCardsController < ApplicationController
-  before_action :set_credit_card, only: [:show, :edit, :update, :destroy]
+  before_action :validate_card
   attr_accessor :number
 
   def index
-    binding.pry
     @credit_cards = CreditCard.all
   end
 
@@ -30,7 +29,12 @@ class CreditCardsController < ApplicationController
   end
 
   def validate_card
-    binding.pry
+    @number = params[:number]
+    if @number.present?
+      @valid = CardValidation.new(@number).call
+      @type = CardType.new(@number).call
+    end
+    render 'index'
   end
 
   def destroy
