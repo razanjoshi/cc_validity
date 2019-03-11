@@ -1,6 +1,6 @@
 <form action="/validate_card" method="get">
-    <input type="text" name="number">
-    <input type="submit" value="Validate this card number">
+    <input type="text" name="number" required=true>
+    <input type="submit" class="btn btn-primary" value="Validate this card number">
   </form>
 
 <% if @valid == "valid" %>
