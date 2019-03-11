@@ -7,6 +7,6 @@
   <h2> Number: <%= "#{@number}" %> </h2>
   <h3> VALID Card Number </h3>
   <h3> Type: <%= "#{@type}" %> </h3>
-<% else %>
+<% elsif @valid == "invalid" %>
   <h3> Invalid Card Number </h3>
 <% end %>
